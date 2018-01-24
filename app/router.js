@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('books');
   this.route('students', function() {
     this.route('view', {path: '/:student_id'});
+    this.route('create');
   });
 });
 

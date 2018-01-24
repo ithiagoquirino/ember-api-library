@@ -1,5 +1,44 @@
 export default function() {
+  this.urlPrefix = 'http://192.168.0.109:8081/api'
+  this.timing = 300;
 
+  this.get('/students', () => {
+    return {
+      'students': [
+        {
+          phone: "(13) 3252-4844",
+          registration: "727456-623",
+          email: "obiwan@gmail.com",
+          name: "Obi Wan Kenobi",
+          id: 1
+        },
+        {
+          phone: "(41) 73296-4282",
+          registration: "424126-123",
+          email: "maul@sciensa",
+          name: "Darth Maul",
+          id: 2
+        }
+      ]
+    };
+  });
+
+  this.get('/students/:student_id', () => {
+    return {
+      "student": {
+        id: 50,
+        name: "FFFf",
+        registration: "AB-431",
+        phone: "62-234123",
+        email: "ff@gmail.com"
+      }
+    };
+  });
+ 
+  this.put('/students/:student_id', () => {
+    return true;
+  });
+  
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
