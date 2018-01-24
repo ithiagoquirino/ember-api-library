@@ -1,0 +1,18 @@
+<div class="home-page-student">
+  <a>Aluno</a>
+  {{input value=student}}
+</div>
+<div class="home-page-book">
+  <a>Livro</a>
+  {{input value=book}}
+</div>
+
+{{#link-to 'students'}}
+  Todos os alunos 
+{{/link-to}}
+<br>
+{{#link-to 'books'}}
+  Todos os livro
+{{/link-to}}
+
+{{chart-book-students}}
