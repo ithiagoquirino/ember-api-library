@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  classNames: 'student-item-main'
+  tagName: 'li',
+  classNames: ['list-group-item']
 });

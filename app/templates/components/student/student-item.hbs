@@ -1,11 +1,17 @@
-{{student.name}}&nbsp;
-
-<div>Excluir</div>
-
-{{#link-to 
-  'students.view'
-  student.id
-  (query-params textSendButton='Alterar')
-}}
-  Alterar
-{{/link-to}}
+<div class="col-md-10">
+  {{student.name}}&nbsp;
+</div>
+<div class="col-md-1">
+  <a class="btn btn-danger btn-xs">Excluir</a>
+</div>
+<div class="col-md-1">
+  {{#link-to 
+    'students.view'
+    student.id
+    (query-params textSendButton='Alterar')
+    class='btn btn-primary btn-xs'
+  }}
+    Alterar
+  {{/link-to}}
+</div>
+<br>
