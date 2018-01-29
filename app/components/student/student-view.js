@@ -4,6 +4,7 @@ import { inject } from '@ember/service';
 
 export default Component.extend({
   store: inject(),
+  router: inject(),
   name: undefined,
   registration: undefined,
   phone: undefined,
@@ -27,12 +28,27 @@ export default Component.extend({
 
   actions: {
     send(studentId) {
-      let student = get(this, 'store').peekRecord('student', studentId);
-      student.set('name', get(this, 'name'));
-      student.set('registration', get(this, 'registration'));
-      student.set('phone', get(this, 'phone'));
-      student.set('email', get(this, 'email'));
-      student.save();
-    }
+      let store = get(this, 'store');
+      let name = get(this, 'name');
+      let registration = get(this, 'registration');
+      let phone = get(this, 'phone');
+      let email = get(this, 'email');
+      if (studentId) {
+        let student = store.peekRecord('student', studentId);
+        student.set('name', name);
+        student.set('registration', registration);
+        student.set('phone', phone);
+        student.set('email', email);
+        student.save();
+      } else {
+        store.createRecord('student', {
+          name,
+          registration,
+          phone,
+          email
+        }).save();
+      }
+      this.get('router').transitionTo('students');
+  }
   }
 });

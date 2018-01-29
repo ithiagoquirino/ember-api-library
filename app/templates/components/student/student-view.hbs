@@ -1,19 +1,19 @@
 <div class="form-group">
-    <label>name</label> 
-    {{input value=name class='form-control'}}
+    <label class="student-view-name">name</label> 
+    {{input value=name class='form-control-student-view-name'}}
 </div>
 <div class="form-group">
-    <label>registration</label> 
-    {{input value=registration class='form-control'}}
+    <label class="student-view-registration">registration</label> 
+    {{input value=registration class='form-control-student-view-registration'}}
 </div>
 <div class="form-group">
-    <label>phone</label> 
-    {{input value=phone class='form-control'}}
+    <label class="student-view-phone">phone</label> 
+    {{input value=phone class='form-control-student-view-phone'}}
 </div>
 <div class="form-group">
-  <label>email</label> 
-  {{input value=email class='form-control'}}
+  <label class="student-view-email">email</label> 
+  {{input value=email class='form-control-student-view-email'}}
 </div>
 <div class="form-group">
-  <button class="btn btn-success" {{action "send" studentId}}>{{textSendButton}}</button>
+  <button class="btn btn-sucess student-view-btn-send" {{action 'send' studentId}}>{{textSendButton}}</button>
 </div>
